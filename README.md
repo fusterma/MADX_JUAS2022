@@ -1,4 +1,4 @@
-# binding-cpymad
+# MAD-X workshops JUAS 2022
 
 This repository is used for running MAD-X through cpymad in a python environment.
 
