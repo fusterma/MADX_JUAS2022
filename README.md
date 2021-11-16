@@ -14,5 +14,6 @@ Tutoria2-Part1: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinde
 
 Tutoria2-Part2: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/fusterma/JUAS2022/HEAD?filepath=Tutorial2_Part2.ipynb) 
 
-Tutoria2-Part3: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/fusterma/JUAS2022/HEAD?filepath=Tutorial2_Part2.ipynb) .
+Tutoria2-Part3: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/fusterma/JUAS2022/HEAD?filepath=Tutorial2_part3.ipynb) .
+
 ---
