@@ -1,5 +1,0 @@
-jupyter
-numpy
-cpymad --only-binary cpymad
-pandas
-matplotlib
