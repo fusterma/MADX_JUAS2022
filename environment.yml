@@ -8,6 +8,5 @@ dependencies:
   - pip
   - pip:
     - matplotlib
-    - seaborn
     - cpymad ==1.9.0
 
