@@ -6,6 +6,7 @@ dependencies:
   - numpy
   - pandas
   - pip
+  - ps2pdf
   - pip:
     - sympy
     - matplotlib
