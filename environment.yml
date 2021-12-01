@@ -7,7 +7,7 @@ dependencies:
   - pandas
   - pip
   - pip:
-    -sympy
+    - sympy
     - matplotlib
     - cpymad ==1.9.0
 
