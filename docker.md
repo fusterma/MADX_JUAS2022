@@ -7,13 +7,13 @@ For this course a **basic knowledge of Python is assumed**, in case you are not 
 During the course we will use Python3 in a Jupyter notebook and, mostly, the *numpy*, *matplotlib*, *pandas* and *cpymad* packages. 
 
 ## Jupyter-notebooks
-JupyterLab is a user-friendly environment to work with Python. You can find an overview on [here](https://jupyter.org/).
+Jupyter is a user-friendly environment to work with Python. You can find an overview on [here](https://jupyter.org/).
 
 ## Working environment and Jupyter notebooks set-up
 We provide the following approaches to set-up the working environment for the MAD-X course:
-- Install and run a [![Docker](https://shields.api-test.nl:/docker/image-size/aoeftiger/docker-cpymad?logo=docker)] image we have prepared for you.
+- Install and run a Docker image we have prepared for you.
 - Install python and packges using Anaconda.
-- Use [![Binder](https://mybinder.org/badge_logo.svg)].
+- Use Binder.
 
 The first two approaches allow you to work locally in your computer while the third one not. We recommend you to work locally in your computer as it will be easier to save your work and keep the tool for private use later, but the third option to work directly on a browser is also available in case you have problems with the local set-up. 
 
@@ -33,7 +33,7 @@ Please install the [Docker Desktop](https://www.docker.com/products/docker-deskt
 
 ### STEP 2: run the Docker image
 
-Once the Docker Desktop is installed and running, open a terminal, move to a folder you want to use for MAD-X exercises and run the instruction
+Once the Docker Desktop is installed and running, open a terminal and run the instruction
 ``` bash
 >> docker run --rm -p 8888:8888 -v $HOME:/src/juas/  juastest/juas2022
 ```
@@ -73,8 +73,7 @@ You should see something like https://user-images.githubusercontent.com/72798799
 
 This Jupyter-notebook environment is setup with the software needed for the MAD-X tutorials.
 
-Now you can create a new folder where to save your jupyter-notebook (right top buttom NEW) and also clic on *NEW-> Python 3 Notebook* on the right top icon and test the code example at the end of this document to verify that everything is working as expected.
-
+Now you can create a new folder where to save your jupyter-notebook (right top buttom NEW) and also clic on *NEW-> Python 3 Notebook* on the right top icon (https://user-images.githubusercontent.com/72798799/146044142-2c6c33bb-427c-4326-80a2-a2642bc0833e.png) and test the code example at the end of this document to verify that everything is working as expected.
 
 # UNIX: Anaconda distribution
 
@@ -100,14 +99,14 @@ The standard *anaconda* distribution comes with most of the needed packages but 
 >> pip install cpymad
 ```
 
-### STEP 3: JupyterLab
+### STEP 3: Jupyter
 Now you can launch from a terminal Jupyter
 ```
 >> jupyter-notebook
 ```
 
 :::info
-If JupyterLab is not installed in your system you can install it with 
+If Jupyter-notebook is not installed in your system you can install it with 
 ```
 >> conda install -c conda-forge notebook
 ```
@@ -178,8 +177,8 @@ If you have problems with the set-up you can contact us by email and we will be 
 Otherwise you can work during the MAD-X tutorial directly on a browser throught binder, we will provide you with the links but special attention has to be paid using this approach to save the progress by downloading and uploading the jupyter-notebooks. 
 
 # An example of Python3 notebook.
+Open a new Python3 jupyter notebook: NEW->Python 3 Notebook and copy and paste the following lines on the jupyter-notebook boxes and give it a try!
 
-Open a new Python3 jupyter notebook: NEW->Python 3 Notebook.
 You can import the python library of MAD-X (*cpymad*) with the following command.
 ```python
 from cpymad.madx import Madx
