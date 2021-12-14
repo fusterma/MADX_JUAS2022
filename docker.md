@@ -1,10 +1,23 @@
 # JUAS2022, MAD-X
 
-During JUAS 2022, we will use Python as scripting language for the *MAD-X* course. We kindly ask you to make some "homework" before JUAS 2022 to prepare yourself (and your laptop) for the course.
+During JUAS 2022, we will use Python as scripting language for the *MAD-X* course. We kindly ask you to make some "homework" before JUAS 2022 to prepare your laptop for the course.
 
-For this course a **basic knowledge of Python is assumed**, therefore if you are not familiar with it you can find, in the following sections, few resources  to fill the gap. During the course we will use Python3 in a Jupyter notebook and, mostly, the *numpy*, *matplotlib*, *pandas* and *cpymad* packages. We will explain in the following sections how to install this software on your laptops. 
+For this course a **basic knowledge of Python is assumed**, in case you are not familiar with it an introduction to python video and a tutorial to fill the gap are provided in indico. 
 
-After a short introduction where we provided some useful links to get familiar with Python, we will focus on the  software setup. Depending on your operating systems (we will consider OSX, Windows and UNIX) you have different procedures to follow.
+During the course we will use Python3 in a Jupyter notebook and, mostly, the *numpy*, *matplotlib*, *pandas* and *cpymad* packages. 
+
+## Jupyter-notebooks
+JupyterLab is a user-friendly environment to work with Python. You can find an overview on [here](https://jupyter.org/).
+
+## Working environment and Jupyter notebooks set-up
+We provide the following approaches to set-up the working environment for the MAD-X course:
+- Install and run a [![Docker](https://shields.api-test.nl:/docker/image-size/aoeftiger/docker-cpymad?logo=docker)] image we have prepared for you.
+- Install python and packges using conda.
+- Use [![Binder](https://mybinder.org/badge_logo.svg)].
+
+The first two approaches allow you to work locally in your computer while the third one not. We recommend you to work locally in your computer as it will be easier to save your work and keep the tool for private use later, but the third option to work directly on a browser is also available in case you have problems with the local set-up. 
+
+In the following we will explain how to **install locally** the required software: we propose different approaches for OSX, Windows and UNIX systems, respectively.
 
 For **OSX** users, please follow the instructions in the *OSX: Install and run a Docker image* section.
 
@@ -12,83 +25,20 @@ For the **Windows** users, please follow  the instructions in the *Windows: Dock
 
 For **UNIX** users, please follow  the instructions in the instructions in the *UNIX: Anaconda + cpymad* section.
 
-
-# A (very) short introduction to Python
-## Test Python on a web page
-
-If you are not familiar with Python and you have not it installed on your laptop, you can start playing with simple python snippets on the web: without installing any special software you can connect, e.g., to 
-
-https://www.pythonanywhere.com/try-ipython/
-
-and test  the following commands
-```python=
-import numpy as np
-# Matrix definition
-Omega=np.array([[0, 1],[-1,0]])
-M=np.array([[1, 0],[1,1]])
-
-# Sum and multiplication of matrices
-Omega - M.T @ Omega @ M
-# M.T means the "traspose of M".
-
-# Function definition
-def Q(f=1):
-    return np.array([[1, 0],[-1/f,1]])
-
-#Eigenvalues and eigenvectors
-np.linalg.eig(M)
-```
-You can compare and check your output with the ones [here](https://cernbox.cern.ch/index.php/s/xipyXzX7V9KBJbI).
-
-## The *numpy* package
-To get familiar with the *numpy* package have a look at the following [summary poster](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Numpy_Python_Cheat_Sheet.pdf).
-
-![](https://codimd.web.cern.ch/uploads/upload_6ffb4d07b1ebb895528f2a34aae41ec6.png)
-
-You can google many other resources, but the one presented of the poster cover the set of instructions you should familiar with.
-
-## The linalg module
-To get familiar with the Linear Algebra (linalg) module have a look at the following [summary poster](
-https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Python_SciPy_Cheat_Sheet_Linear_Algebra.pdf).
-
-![](https://hackmd.web.cern.ch/uploads/upload_15561fc12184bb0ae3f9cf7b1850317a.png)
-
-## The *pandas* package
-To get familiar with the *pandas* package have a look at the following [summary poster](
-https://s3.amazonaws.com/assets.datacamp.com/blog_assets/PandasPythonForDataScience.pdf).
-![](https://codimd.web.cern.ch/uploads/upload_90383c01e29d29fb6a5516c613e22c4d.png)
-
-## JupyterLab
-JupyterLab is a user-friendly environment to work with Python. 
-
-You can find an overview on JupyterLab [here](
-https://jupyterlab.readthedocs.io/en/stable/).
-
-In the following section we will explain how to install a Python on your laptop: we propose three different approaches for OSX, Windows and UNIX systems, respectively.
-
-
 # OSX: install and run a Docker image
 In order to  ease the installation procedure, we prepared a virtual environment that launch a Python3 Jupyter server (the installation on *cpymad* on OSX can be tricky, so we suggest to use the Docker image as suggested).
 
 ### STEP 1: install the Docker Desktop
-Please install the [Docker Desktop](https://www.docker.com/products/docker-desktop).
-
-:::info
-This is available for MAC and Windows 10 Enterprise and Professional (but not the 'Home Edition'). If you have Windows Home edition please refer to the *Windows: Docker Toolbox* section.
-::: 
+Please install the [Docker Desktop](https://www.docker.com/products/docker-desktop). 
 
 ### STEP 2: run the Docker image
 
-Once the Docker Desktop is installed and running, open a terminal, move to a folder you want to use for CAS exercises and run the instruction
+Once the Docker Desktop is installed and running, open a terminal, move to a folder you want to use for MAD-X exercises and run the instruction
 ``` bash
->> docker run -p 8888:8888 -v "$PWD":/juas sterbini/juas
+>> docker run --rm -p 8888:8888 -v $HOME:/src/juas/  juastest/juas2022
 ```
 This will download the image (~5GB): an internet connection is needed **only for the first time**, afterwords you can work offline. 
-
-:::warning
-It is beneficial important to have an offline working solution. So, even if you have a working online Python environment (e.g. https://swan.web.cern.ch/) we strongly encourage to use an offline Python distribution.
-:::
-
+In addition, this command binds your home directory to inside the docker container such that you can save and load notebooks.
 You should get something as
 ```bash
 MACBE16107:Tutorials sterbini$ docker run -p 8888:8888 -v "$PWD":/juas sterbini/juas
@@ -119,15 +69,12 @@ http://127.0.0.1:8888/?token=ea65f062bfce037fd7a3b47926393a0d5ded381785b0136b
 
 You have to copy, paste and **edit** the last line on the address field of your browser.
 
-You should see something as 
+You should see something as https://user-images.githubusercontent.com/72798799/146044142-2c6c33bb-427c-4326-80a2-a2642bc0833e.png .
 
-![](https://codimd.web.cern.ch/uploads/upload_686f260c379cd194f3ae3fd61c5a7c46.png)
 
-This JupyterLab environment is setup with the software needed for the MAD-X tutorials. 
+This Jupyter-notebook environment is setup with the software needed for the MAD-X tutorials.
 
-The *Laucher* tab allows you to open a notebook or console or some basic terminal/editing environment.
-
-You can clic on the *Python 3 Notebook* icon in the *Launcher* tab and test the code example at the end of this document to verify that everything is working as expected.
+Now you can create a new folder where to save your jupyter-notebook (right top buttom NEW) and also clic on *NEW-> Python 3 Notebook* on the right top icon and test the code example at the end of this document to verify that everything is working as expected.
 
 
 # UNIX: Anaconda distribution
@@ -148,20 +95,13 @@ If some of them are missing, please install them with, e.g.,
 >> conda install -c conda-forge matplotlib 
 ```
 
-### STEP 2: *PyNAFF* installation
-You can find information on https://pypi.org/project/PyNAFF/.
-In most of the case it is enough to open a terminal and do
-```
->> pip install PyNAFF
-```
-
-### STEP 3: *cpymad* installation
+### STEP 2: *cpymad* installation
 The standard *anaconda* distribution comes with most of the needed packages but *cpymad*. You can install it following the instructions from https://github.com/hibtc/cpymad. In most of the case it is enough to open a terminal and do
 ```
 >> pip install cpymad
 ```
 
-### STEP 4: JupyterLab
+### STEP 3: JupyterLab
 Now you can launch from a terminal JupyterLab
 ```
 >> jupyter-lab
