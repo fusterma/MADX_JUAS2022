@@ -12,7 +12,7 @@ JupyterLab is a user-friendly environment to work with Python. You can find an o
 ## Working environment and Jupyter notebooks set-up
 We provide the following approaches to set-up the working environment for the MAD-X course:
 - Install and run a [![Docker](https://shields.api-test.nl:/docker/image-size/aoeftiger/docker-cpymad?logo=docker)] image we have prepared for you.
-- Install python and packges using conda.
+- Install python and packges using Anaconda.
 - Use [![Binder](https://mybinder.org/badge_logo.svg)].
 
 The first two approaches allow you to work locally in your computer while the third one not. We recommend you to work locally in your computer as it will be easier to save your work and keep the tool for private use later, but the third option to work directly on a browser is also available in case you have problems with the local set-up. 
@@ -62,15 +62,14 @@ MACBE16107:Tutorials sterbini$ docker run -p 8888:8888 -v "$PWD":/juas sterbini/
 **The last line is the most important one**.
 :::
 
-### STEP 3: open JupyterLab from a browser
+### STEP 3: open a jupyter-notebook from a browser
 
 Open a web browser and connect to the python server at (**in this case**, check the last line)
 http://127.0.0.1:8888/?token=ea65f062bfce037fd7a3b47926393a0d5ded381785b0136b
 
 You have to copy, paste and **edit** the last line on the address field of your browser.
 
-You should see something as https://user-images.githubusercontent.com/72798799/146044142-2c6c33bb-427c-4326-80a2-a2642bc0833e.png .
-
+You should see something like https://user-images.githubusercontent.com/72798799/146044142-2c6c33bb-427c-4326-80a2-a2642bc0833e.png .
 
 This Jupyter-notebook environment is setup with the software needed for the MAD-X tutorials.
 
@@ -79,7 +78,7 @@ Now you can create a new folder where to save your jupyter-notebook (right top b
 
 # UNIX: Anaconda distribution
 
-For UNIX system the simplest way to install Python environment  on your laptop is to setup manually your environment by installing [*anaconda*](http://docs.continuum.io/_downloads/9ee215ff15fde24bf01791d719084950/Anaconda-Starter-Guide.pdf) from  
+For UNIX system the simplest way to install Python environment on your laptop is to setup manually your environment by installing [*anaconda*](http://docs.continuum.io/_downloads/9ee215ff15fde24bf01791d719084950/Anaconda-Starter-Guide.pdf) from  
 http://docs.continuum.io/anaconda/
 
 ### STEP 1: Anaconda installation
@@ -102,24 +101,21 @@ The standard *anaconda* distribution comes with most of the needed packages but 
 ```
 
 ### STEP 3: JupyterLab
-Now you can launch from a terminal JupyterLab
+Now you can launch from a terminal Jupyter
 ```
->> jupyter-lab
+>> jupyter-notebook
 ```
 
 :::info
 If JupyterLab is not installed in your system you can install it with 
 ```
->> conda install -c conda-forge jupyterlab
+>> conda install -c conda-forge notebook
 ```
 :::
 
+The *jupyter-notebook* command will open a browser.
 
-The *jupyter-lab* command will open a browser.
-
-The Laucher tab allows you to open a notebook or console or some basic terminal/editing environment.
-
-You can clic on the Python 3 Notebook icon in the Launcher tab and test the code example at the end of this document to verify that everything is working as expected.
+You can clic on the NEW->Python 3 Notebook icon on the top right (https://user-images.githubusercontent.com/72798799/146044142-2c6c33bb-427c-4326-80a2-a2642bc0833e.png) and test the code example at the end of this document to verify that everything is working as expected.
 
 # Windows: Docker Toolbox
 
@@ -149,7 +145,7 @@ Now open the Docker Quickstart (icon on the Desktop). It will take some time to 
 Then type
 
 ```bash
->> docker run -p 8888:8888 -v "$PWD":/juas sterbini/juas
+>> docker run -p 8888:8888 -v $HOME:/src/juas/  juastest/juas2022
 ```
 This download the docker image (only for the first time, ~5 GB) and run it.
 
@@ -160,7 +156,7 @@ You will get something like
 **The last line is the most important one**.
 :::
 
-### STEP 4: open JupyterLab from a browser
+### STEP 4: open Jupyter from a browser
 
 Open a web browser and connect to the python server at (**in this case**, see the last line of the previous screenshot)
 http://127.0.0.1:50000/?token=HereGoesYourAlphanumericToken
@@ -169,18 +165,21 @@ http://127.0.0.1:50000/?token=HereGoesYourAlphanumericToken
 You have to copy, paste and **edit** the last line on the address field of your browser. **Please remember to replace the port 8888 with the port 50000.**
 :::
 
-
 It will open a browser and you should get something as 
 
-![](https://codimd.web.cern.ch/uploads/upload_5bb710c2470ed78887f884fc170fed97.png)
+![](https://user-images.githubusercontent.com/72798799/146044142-2c6c33bb-427c-4326-80a2-a2642bc0833e.png)
 
-The Laucher tab allows you to open a notebook or console or some basic terminal/editing environment.
+You can clic on the NEW->Python 3 Notebook icon on the top right (https://user-images.githubusercontent.com/72798799/146044142-2c6c33bb-427c-4326-80a2-a2642bc0833e.png) and test the code example at the end of this document to verify that everything is working as expected.
 
-You can clic on the Python 3 Notebook icon in the Launcher tab and test the code example at the end of this document to verify that everything is working as expected.
+# Problems with the set-up.
 
-# An example of Python3 notebook in Jupyter Lab.
+If you have problems with the set-up you can contact us by email and we will be happy to help (nuria.fuster@ific.uv.es).
 
-From the *Launcher* of JupyterLab select the Python 3 Notebook.
+Otherwise you can work during the MAD-X tutorial directly on a browser throught binder, we will provide you with the links but special attention has to be paid using this approach to save the progress by downloading and uploading the jupyter-notebooks. 
+
+# An example of Python3 notebook.
+
+Open a new Python3 jupyter notebook: NEW->Python 3 Notebook.
 You can import the python library of MAD-X (*cpymad*) with the following command.
 ```python
 from cpymad.madx import Madx
@@ -290,28 +289,12 @@ QD=sy.Matrix([[1,0], [1/f,1]])
 M=DRIFT@QD@DRIFT@QF
 M=sy.simplify(M)
 M
-```
 
-or FTT analysis using PyNAFF, e.g.,
-``` python
-import PyNAFF as pnf
-import numpy as np
-
-t = np.linspace(1, 3000, num=3000, endpoint=True)
-Q = 0.12345
-signal = np.sin(2.0*np.pi*Q*t)
-pnf.naff(signal, 500, 1, 0 , False, window=1)
-# outputs an array of arrays for each frequency. Each sub-array includes:
-# [order of harmonic, frequency, Amplitude, Re{Amplitude}, Im{Amplitude]
-
-# My frequency is simply 
-pnf.naff(signal, 500, 1, 0 , False)[0][1]
 ```
 
 An example of test ipython notebook is shown in
 
 https://cernbox.cern.ch/index.php/s/JJCu7KRPAjuitVF
-
 
 You will learn much more at JUAS 2022. **See you (remotely)  there!**
 
