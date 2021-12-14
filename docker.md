@@ -1,6 +1,6 @@
-# JUAS2021, MAD-X
+# JUAS2022, MAD-X
 
-During [JUAS 2021](https://indico.cern.ch/category/3833/), we will use Python as scripting language for the *MAD-X*  course. We kindly ask you to make some "homework" before [JUAS 2021](https://indico.cern.ch/category/3833/) to prepare yourself (and your laptop) for the course.
+During JUAS 2022, we will use Python as scripting language for the *MAD-X* course. We kindly ask you to make some "homework" before JUAS 2022 to prepare yourself (and your laptop) for the course.
 
 For this course a **basic knowledge of Python is assumed**, therefore if you are not familiar with it you can find, in the following sections, few resources  to fill the gap. During the course we will use Python3 in a Jupyter notebook and, mostly, the *numpy*, *matplotlib*, *pandas* and *cpymad* packages. We will explain in the following sections how to install this software on your laptops. 
 
@@ -86,7 +86,7 @@ Once the Docker Desktop is installed and running, open a terminal, move to a fol
 This will download the image (~5GB): an internet connection is needed **only for the first time**, afterwords you can work offline. 
 
 :::warning
-It is beneficial important to have an offline working solution. So, even if you have a working online Python environment (e.g. https://swan.web.cern.ch/) we strongly encourage to use  an offline Python distribution.
+It is beneficial important to have an offline working solution. So, even if you have a working online Python environment (e.g. https://swan.web.cern.ch/) we strongly encourage to use an offline Python distribution.
 :::
 
 You should get something as
@@ -373,7 +373,7 @@ An example of test ipython notebook is shown in
 https://cernbox.cern.ch/index.php/s/JJCu7KRPAjuitVF
 
 
-You will learn much more at JUAS 2021. **See you (remotely)  there!**
+You will learn much more at JUAS 2022. **See you (remotely)  there!**
 
 
 
